@@ -39,7 +39,8 @@ class Var(object):
         URL = "http{}://{}{}/".format(
             "s" if HAS_SSL else "", FQDN, "" if NO_PORT else ":" + str(PORT)
         )
-
+    if environ.get("App_Url"):
+        URL=environ.get("App_Url")
     UPDATES_CHANNEL = "TechZBots"
     OWNER_ID = int(environ.get('OWNER_ID', '777000'))
 
